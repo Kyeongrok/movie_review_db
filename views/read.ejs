@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css'/>
+</head>
+<body>
+<h1><%= title %></h1>
+
+<form action="/board/update" method="post">
+    <table border="1">
+        <input type="hidden" name="idx" value="<%=row.idx%>"/>
+        <tr>
+            <td>User_Name</td>
+            <td><input type="text" name="name" id="name" value="<%=row.name%>" required/></td>
+        </tr>
+        <tr>
+            <td>Movie_Title</td>
+            <td><input type="text" name="title" id="title" value="<%=row.title%>" required/></td>
+        </tr>
+        <tr>
+            <td>Movie_summary</td>
+            <td><textarea name="content" id="content" cols="30" rows="10" required><%=row.content%></textarea></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" name="passwd" id="passwd" required/></td>
+        </tr>
+        <tr>
+            <td>Modi_Date</td>
+            <td><%=row.modidate%></td>
+        </tr>
+        <tr>
+            <td>Regi_date</td>
+            <td><%=row.regdate%></td>
+        </tr>
+        <tr>
+            <td>조회수</td>
+            <td><%=row.hit%></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Modify</button>
+                <button type="submit" formaction="/board/delete">Delete</button>
+                <a href="/board/list">List</a>
+            </td>
+        </tr>
+    </table>
+</form>
+
+</body>
+</html>
